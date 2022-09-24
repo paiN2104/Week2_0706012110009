@@ -34,12 +34,12 @@
         android:id="@+id/listHewanRV"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolbar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/ayamFilter" />
 
     <TextView
         android:id="@+id/middletag"
@@ -64,5 +64,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/ayamFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#7289DA"
+        android:text="Ayam"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
+
+    <Button
+        android:id="@+id/sapiFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#7289DA"
+        android:text="Sapi"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/ayamFilter"
+        app:layout_constraintTop_toTopOf="@+id/ayamFilter" />
+
+    <Button
+        android:id="@+id/kambingFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#7289DA"
+        android:text="Kambing"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/sapiFilter"
+        app:layout_constraintTop_toTopOf="@+id/sapiFilter" />
+
+    <Button
+        android:id="@+id/resetFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#7289DA"
+        android:text="Reset"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kambingFilter"
+        app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

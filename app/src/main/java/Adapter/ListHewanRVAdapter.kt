@@ -22,7 +22,7 @@ import com.example.week2.R
 import com.example.week2.databinding.ActivityHomeBinding
 import com.example.week2.databinding.CardviewBinding
 
-class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>, val cardListener: CardListener):
+class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>):
     RecyclerView.Adapter<ListHewanRVAdapter.viewHolder>() {
     class viewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -38,6 +38,7 @@ class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>, val cardListener: Car
             }
         }
     }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
@@ -59,21 +60,43 @@ class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>, val cardListener: Car
             it.context.startActivity(myIntent)
         }
         holder.binding.soundBut.setOnClickListener{
-            if(GlobalVar.listDataHewan.get(position) is Ayam){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
-            }else if(GlobalVar.listDataHewan.get(position) is Sapi){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
-            }else if(GlobalVar.listDataHewan.get(position) is Kambing){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
+            if(GlobalVar.filterJenis.isEmpty()){
+                if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterJenis.get(position) is Ayam){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterJenis.get(position) is Sapi){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterJenis.get(position) is Kambing){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }
             }
+            else{
+                if(GlobalVar.filterJenis.get(position) is Ayam){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.filterJenis.get(position) is Sapi){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.filterJenis.get(position) is Kambing){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).sound(), Toast.LENGTH_SHORT).show()
+                }
+            }
+
         }
         holder.binding.feedingBut.setOnClickListener{
-            if(GlobalVar.listDataHewan.get(position) is Ayam){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(seed = 0), Toast.LENGTH_SHORT).show()
-            }else if(GlobalVar.listDataHewan.get(position) is Sapi){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
-            }else if(GlobalVar.listDataHewan.get(position) is Kambing){
-                Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
+            if(GlobalVar.filterJenis.isEmpty()){
+                if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterJenis.get(position) is Ayam){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(seed = 0), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterJenis.get(position) is Sapi){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterJenis.get(position) is Kambing){
+                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
+                }
+            }else{
+                if(GlobalVar.filterJenis.get(position) is Ayam){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).feeding(seed = 0), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.filterJenis.get(position) is Sapi){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
+                }else if(GlobalVar.filterJenis.get(position) is Kambing){
+                    Toast.makeText(it.context, GlobalVar.filterJenis.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

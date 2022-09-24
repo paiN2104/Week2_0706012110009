@@ -51,7 +51,12 @@ class CreateActivity : AppCompatActivity() {
         if(position!=-1){
             binding.AddHewanView.setText("Edit Hewan")
             binding.SubmitAddBut.setText("Save")
-            val tempHewan = GlobalVar.listDataHewan[position]
+            val tempHewan =
+                if(GlobalVar.filterJenis.isEmpty()){
+                    GlobalVar.listDataHewan[position]
+                } else {
+                    GlobalVar.filterJenis[position]
+                }
             Display(tempHewan)
         }
     }

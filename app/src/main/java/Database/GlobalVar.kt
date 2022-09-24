@@ -7,5 +7,7 @@ class GlobalVar {
         val STORAGE_PERMISSION_CODE: Int=100
         val READ_EXTERNAL_STORAGE: Int = 100
         val listDataHewan = ArrayList<Hewan>()
+        val filterJenis = ArrayList<Hewan>()
+        val simpan = ArrayList<Hewan>()
     }
 }
