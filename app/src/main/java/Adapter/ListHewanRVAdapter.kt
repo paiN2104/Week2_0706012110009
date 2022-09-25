@@ -61,11 +61,11 @@ class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>):
         }
         holder.binding.soundBut.setOnClickListener{
             if(GlobalVar.filterJenis.isEmpty()){
-                if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterJenis.get(position) is Ayam){
+                if(GlobalVar.listDataHewan.get(position) is Ayam){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterJenis.get(position) is Sapi){
+                }else if(GlobalVar.listDataHewan.get(position) is Sapi){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterJenis.get(position) is Kambing){
+                }else if(GlobalVar.listDataHewan.get(position) is Kambing){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).sound(), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -82,11 +82,11 @@ class ListHewanRVAdapter(val listHewan : ArrayList<Hewan>):
         }
         holder.binding.feedingBut.setOnClickListener{
             if(GlobalVar.filterJenis.isEmpty()){
-                if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterJenis.get(position) is Ayam){
+                if(GlobalVar.listDataHewan.get(position) is Ayam){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(seed = 0), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterJenis.get(position) is Sapi){
+                }else if(GlobalVar.listDataHewan.get(position) is Sapi){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterJenis.get(position) is Kambing){
+                }else if(GlobalVar.listDataHewan.get(position) is Kambing){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).feeding(grass = String()), Toast.LENGTH_SHORT).show()
                 }
             }else{
